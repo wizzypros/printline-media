@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printline Media Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#eb181e",
+                    "primary-red": "#eb181e",
+                    "primary-green": "#83cc25",
+                    "primary-lightblue": "#55aee6",
+                    "primary-yellow": "#f6b712",
+                    "primary-blue": "#3871c2",
+                    "sky": "#55aee6",
+                    "green": "#83cc25",
+                    "yellow": "#f6b712",
+                    "blue": "#3871c2",
+                    "background-light": "#ffffff",
+                    "text-primary": "#111318",
+                    "text-dark": "#111827",
+                    "text-secondary": "#6b7280",
+                    "text-muted": "#6b7280",
+                },
+                fontFamily: {
+                    "display": ["Manrope", "sans-serif"]
+                },
+            },
+        },
+    }
+    </script>
+    <style>
+        body {
+          font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #eb181e, #83cc25, #55aee6, #f6b712, #3871c2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-out forwards;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
