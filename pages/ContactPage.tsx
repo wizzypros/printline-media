@@ -11,9 +11,24 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { name: 'LinkedIn', icon: 'alternate_email', color: 'primary-lightblue' },
-    { name: 'Twitter', icon: 'code', color: 'primary-green' },
-    { name: 'Instagram', icon: 'photo_camera', color: 'primary-yellow' }
+    { 
+        name: 'LinkedIn', 
+        href: 'https://www.linkedin.com/', 
+        color: 'primary-lightblue',
+        icon: <svg aria-hidden="true" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.117 2H4.883A2.887 2.887 0 002 4.883v14.234A2.887 2.887 0 004.883 22h14.234A2.887 2.887 0 0022 19.117V4.883A2.887 2.887 0 0019.117 2zM8.711 18.355H5.53v-8.83h3.181v8.83zM7.121 8.21a1.59 1.59 0 110-3.18 1.59 1.59 0 010 3.18zm10.234 10.145h-3.181V13.89c0-1.065-.02-2.435-1.484-2.435-1.485 0-1.714 1.16-1.714 2.358v4.542H7.811v-8.83h3.053v1.399h.044c.423-.8 1.458-1.64 2.91-1.64 3.111 0 3.685 2.047 3.685 4.708v5.428z" fillRule="evenodd"></path></svg>
+    },
+    { 
+        name: 'Twitter', 
+        href: 'https://twitter.com/', 
+        color: 'primary-green',
+        icon: <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+    },
+    { 
+        name: 'Instagram', 
+        href: 'https://www.instagram.com/', 
+        color: 'primary-yellow',
+        icon: <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"></path></svg>
+    }
 ];
 
 interface FormData {
@@ -132,9 +147,11 @@ const ContactPage: React.FC = () => {
                                 </div>
                                 <div className="px-4 flex flex-wrap justify-start gap-4">
                                     {socialLinks.map(link => (
-                                        <a key={link.name} className="flex flex-col items-center gap-2 p-2.5 text-center w-20 group" href="#">
+                                        <a key={link.name} className="flex flex-col items-center gap-2 p-2.5 text-center w-20 group" href={link.href} target="_blank" rel="noopener noreferrer">
                                             <div className={`rounded-full bg-slate-100 group-hover:bg-${link.color}/20 p-3.5 transition-colors`}>
-                                                <span className={`material-symbols-outlined text-${link.color}`} style={{ fontSize: '24px' }}>{link.icon}</span>
+                                                <div className={`text-${link.color}`}>
+                                                    {link.icon}
+                                                </div>
                                             </div>
                                             <p className="text-text-secondary group-hover:text-text-primary transition-colors text-sm font-medium leading-normal">{link.name}</p>
                                         </a>
